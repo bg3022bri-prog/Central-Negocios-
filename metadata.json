@@ -1,0 +1,6 @@
+{
+  "name": "CentralNegocio - Sistema de Gestión para Pequeños Negocios",
+  "description": "Herramienta digital sencilla y económica para organizar tareas, horarios, pedidos y responsabilidades de emprendedores y comercios locales.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

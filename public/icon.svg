@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#171717"/>
+  <rect x="32" y="32" width="448" height="448" rx="88" fill="none" stroke="#262626" stroke-width="8"/>
+  <text x="256" y="295" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="190" fill="#ffffff" text-anchor="middle" letter-spacing="-6">CN</text>
+  <circle cx="370" cy="148" r="32" fill="#10b981"/>
+  <path d="M356 148l10 10 20 -20" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

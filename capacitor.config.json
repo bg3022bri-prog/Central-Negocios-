@@ -1,0 +1,6 @@
+{
+  "appId": "com.centralnegocio.app",
+  "appName": "CentralNegocio",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

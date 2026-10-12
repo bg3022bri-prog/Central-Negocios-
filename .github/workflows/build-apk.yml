@@ -1,0 +1,52 @@
+name: Compilar APK Android (En la Nube)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo fuente
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias web
+        run: npm install
+
+      - name: Compilar aplicacion web (Vite)
+        run: npm run build
+
+      - name: Inicializar y sincronizar Capacitor Android
+        run: |
+          npx cap add android || true
+          npx cap sync android
+
+      - name: Configurar Java JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Dar permisos de ejecucion a Gradle
+        run: chmod +x android/gradlew
+
+      - name: Compilar APK en modo Debug
+        run: |
+          cd android
+          ./gradlew assembleDebug
+
+      - name: Subir archivo APK generado
+        uses: actions/upload-artifact@v4
+        with:
+          name: CentralNegocio-Android-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 14
